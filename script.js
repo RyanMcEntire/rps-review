@@ -1,22 +1,24 @@
-function getRandomNumber() {
-  return Math.floor(Math.random() * 3 + 1);
-}
+
 
 function getComputerChoice() {
-  const cChoice = getRandomNumber()
-  if ((cChoice = 1)) {
-    return "rock";
+  const randNumber = Math.floor(Math.random() * (3)) + 1;
+  if (randNumber == 1) {
+    return "rock"
   }
-  if ((cChoice = 2)) {
+  if (randNumber == 2) {
     return "paper";
   }
-  if ((cChoice = 3)) {
+  if (randNumber == 3) {
     return "scissors";
   }
 }
 
-function playRound() {
-  console.log(getComputerChoice())
+function playRound(playerSelection, computerSelection) {
+  return playerSelection + " " + computerSelection;
 }
 
-playRound()
+const playerSelection = prompt("Pick Rock, Paper, or Scissors");
+const computerSelection = getComputerChoice();
+
+
+console.log(playRound(playerSelection, computerSelection));
